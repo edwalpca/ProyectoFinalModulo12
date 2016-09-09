@@ -70,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Proceso para Crear el Banner Inferior.
         adView = (AdView) findViewById(R.id.banner_inferior_googleAds);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        adView.loadAd(adRequest);
 
 
     }
-
-
-
     public void getFbKeyHash(String packageName){
 
         try {
@@ -98,5 +98,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int reqCode, int resCode, Intent i){
         cM.onActivityResult(reqCode, resCode, i);
     }
+
+
+    //Metodos para la seccion de Google Ads
+    @Override
+    protected void onPause() {
+        if(adView != null){
+            adView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        if(adView != null){
+            adView.resume();
+        }
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(adView != null){
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
+
 
 }
