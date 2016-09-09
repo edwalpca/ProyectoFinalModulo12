@@ -32,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
+        //
+        //Ad unit ID: ca-app-pub-7633520457423281/3526351713
+        //ID de aplicación: ca-app-pub-7633520457423281~6619418913
+        //ID del bloque de anuncios: ca-app-pub-7633520457423281/
+
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         getFbKeyHash("3ynR3su934dTmYdYzWelS3dmEjk=");
@@ -56,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "¡Inicio de sesión NO exitoso!", Toast.LENGTH_LONG).show();
             }
         });
+
+
+        // Proceso para Crear el Banner Inferior.
+
 
     }
 
