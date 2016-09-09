@@ -21,11 +21,16 @@ import com.facebook.login.widget.LoginButton;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class MainActivity extends AppCompatActivity {
 
     private CallbackManager cM;
     private LoginButton lB;
+
+    // Componente para visualizar el Banner de Google.
+    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Proceso para Crear el Banner Inferior.
+        adView = (AdView) findViewById(R.id.banner_inferior_googleAds);
 
 
     }
