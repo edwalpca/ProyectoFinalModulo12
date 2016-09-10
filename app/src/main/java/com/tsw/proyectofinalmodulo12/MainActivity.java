@@ -10,6 +10,8 @@ import android.os.Bundle;
 
 import android.util.Log;
 
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView nombreProfileFB,emailProfileFB;
     private ProfilePictureView profileImage;// para ver la imagen del perfil
+    private ImageView detallegift;
 
     // Componente para visualizar el Banner de Google.
     private AdView adView;
@@ -66,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         // Utilizare los siguientes componenentes para mostrar los datos e info del perfil del usuario.
         nombreProfileFB = (TextView)findViewById(R.id.nombrePerfil);
         emailProfileFB  = (TextView)findViewById(R.id.emailPerfil);
-
-
+        detallegift     = (ImageView) findViewById(R.id.gracias_nextU);
+        detallegift.setVisibility(View.INVISIBLE);
 
 
         lB.registerCallback(cM, new FacebookCallback<LoginResult>() {
@@ -79,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 nombreProfileFB.setText( profile.getName());
                 profileImage = (ProfilePictureView) findViewById(R.id.profilePicture);
                 profileImage.setProfileId(profile.getId());
+
+                detallegift.setVisibility(View.VISIBLE);
+
                 Toast.makeText(MainActivity.this, "¡Bienvenido! " + profile.getName() + " has iniciado sesion" , Toast.LENGTH_LONG).show();
             }
 
@@ -100,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                     if (newToken == null){
                         nombreProfileFB.setText("");
                         profileImage.setProfileId(null);
+                        detallegift.setVisibility(View.INVISIBLE);
                     }
                 }
             };

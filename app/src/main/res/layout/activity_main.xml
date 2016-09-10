@@ -62,5 +62,14 @@
 
         android:layout_gravity="center_horizontal" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gracias_nextU"
+        android:src="@drawable/graciasnextu"
+        android:layout_above="@+id/banner_inferior_googleAds"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>
