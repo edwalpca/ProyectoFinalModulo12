@@ -37,14 +37,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        //
         //Ad unit ID: ca-app-pub-7633520457423281/3526351713
         //ID de aplicación: ca-app-pub-7633520457423281~6619418913
         //ID del bloque de anuncios: ca-app-pub-7633520457423281/
 
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
-        getFbKeyHash("3ynR3su934dTmYdYzWelS3dmEjk=");
+
+        cM = CallbackManager.Factory.create();
+
+        // KeyHash de mi aplicacion en FaceBook.
+        getFbKeyHash("NfgDlIG7XWJzUZRUL+bZySrMX1Q=");
+
 
         setContentView(R.layout.activity_main);
 
@@ -98,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int reqCode, int resCode, Intent i){
         cM.onActivityResult(reqCode, resCode, i);
     }
+
 
 
     //Metodos para la seccion de Google Ads
