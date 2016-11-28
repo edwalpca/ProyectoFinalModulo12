@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         cM = CallbackManager.Factory.create();
 
-        // KeyHash de mi aplicacion en FaceBook.
+        // KeyHash de mi aplicación en FaceBook.
         getFbKeyHash("NfgDlIG7XWJzUZRUL+bZySrMX1Q=");
 
         setContentView(R.layout.activity_main);
